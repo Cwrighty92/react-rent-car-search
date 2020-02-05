@@ -61,6 +61,16 @@
   height: 60vh;
 }
 
+ul {
+  list-style-type: none;
+  justify-content: center;
+  display: table;
+  padding-inline-start: 0;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+}
+
 @media only screen and (max-width: 600px) {
   .form {
     position: absolute;
@@ -88,14 +98,4 @@
   .label {
     padding-left: 18px;
   }
-}
-
-ul {
-  list-style-type: none;
-  justify-content: center;
-  display: table;
-  padding-inline-start: 0;
-  width: 100%;
-  text-align: left;
-  margin: 0;
 }

@@ -35,19 +35,6 @@ describe("search form tests", () => {
     expect(SearchFormComponent.find("li").length).toBe(0);
   });
 
-  it("should make request when characters are 2", async () => {
-    const axiosGetSpy = jest.spyOn(axios, "get").mockResolvedValueOnce({
-      data: { results: { docs: [{ name: "test" }] } }
-    });
-    const { getByTestId } = render(<SearchForm />);
-
-    fireEvent.change(getByTestId("input"), { target: { value: "ma" } });
-
-    expect(axiosGetSpy).toBeCalledWith(
-      "https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=6&solrTerm=ma"
-    );
-  });
-
   it("should not make request when value is less than 2", () => {
     const utils = render(<SearchForm />);
     const input = utils.getByTestId("input");
