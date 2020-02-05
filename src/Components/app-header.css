@@ -1,0 +1,76 @@
+@media only screen and (max-width: 600px) {
+  .rental-image {
+    height: 18px;
+  }
+
+  .app-header {
+    height: 30vh;
+  }
+
+  .car-hire {
+    font-size: 0.875rem;
+  }
+  .hero {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .rental-image {
+    height: 35px;
+  }
+
+  .ideal-car {
+    padding: 16px;
+  }
+
+  .app-header {
+    height: 40vh;
+  }
+
+  .hero {
+    text-align: center;
+  }
+}
+
+.app-header {
+  height: 30vh;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  background-color: #0a6fba;
+}
+
+.rental-car-header {
+  height: 40px;
+  background-color: #0a6fba;
+  padding-top: 16px;
+  padding-left: 8px;
+}
+
+.rental-image {
+  display: block;
+  color: #0a6eb9;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 1.25;
+}
+
+.line {
+  border-top: 0.1em solid silver;
+  margin: 0px 10px;
+}
+
+.hero {
+  display: block;
+  background-color: #0a6fba;
+  margin: 0;
+  visibility: visible;
+  padding-left: 8px;
+}
+
+.car-hire {
+  line-height: 1.375rem;
+  color: #fff;
+  font-weight: 500;
+}
