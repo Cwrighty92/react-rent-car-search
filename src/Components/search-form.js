@@ -39,7 +39,6 @@ const SearchForm = () => {
     <form className="form">
       <h2 className="ideal-car">Let’s find your ideal car</h2>
       <label className="label">Pick-up Location</label>
-
       <div className="search-section">
         <input
           placeholder="city, airport, station, region, district..."
@@ -50,7 +49,7 @@ const SearchForm = () => {
         />
         <ul>
           {results.map(item => (
-            <li className="search-item" key={item.name}>
+            <li className="search-item" key={item.placeKey}>
               {item.name}
             </li>
           ))}

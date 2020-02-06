@@ -6,7 +6,7 @@ const AppHeader = () => {
     <div className="app-header">
       <header className="rental-car-header">
         <img
-          class="rental-image"
+          className="rental-image"
           src="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/header/logo_white.svg"
           alt="Car Hire - Rentalcars.com"
         ></img>
