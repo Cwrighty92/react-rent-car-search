@@ -1,6 +1,5 @@
 .ideal-car {
   padding-left: 8px;
-  margin-top: 5px;
   font-weight: 500;
   font-family: Ubuntu, Open Sans, Segoe UI, Tahoma, sans-serif;
 }
@@ -83,16 +82,15 @@ ul {
     top: 85px;
     width: 100%;
   }
-
-  .car-hire {
-    font-size: 0.875rem;
-  }
 }
 
 @media only screen and (min-width: 750px) {
   .ideal-car {
-    padding: 16px;
+    padding-left: 25px;
+    padding-top: 30px;
+    font-size: 30px;
   }
+
   .form {
     position: absolute;
     left: 50%;
@@ -102,7 +100,8 @@ ul {
   }
 
   .label {
-    padding-left: 18px;
+    padding-left: 25px;
+    padding-bottom: 10px;
   }
 
   ul {
