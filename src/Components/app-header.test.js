@@ -6,7 +6,7 @@ import AppHeader from "./app-header";
 describe("app-header tests", () => {
   const AppHeaderComponent = shallow(<AppHeader />);
 
-  it("Should render component correctly", () => {
+  it("Should render app header component correctly", () => {
     expect(
       AppHeaderComponent.find("div")
         .at(0)

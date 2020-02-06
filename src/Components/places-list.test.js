@@ -12,6 +12,7 @@ describe("Places list tests", () => {
     },
     { name: "Alton Towers", country: "Uk", placeKey: 12314, placeType: "G" }
   ];
+
   it("should render empty ul when no search results", () => {
     const PlacesListComponent = shallow(<PlacesList results={[]} />);
 
@@ -19,7 +20,7 @@ describe("Places list tests", () => {
     expect(PlacesListComponent.find("li").length).toBe(0);
   });
 
-  it("should render no results found", () => {
+  it("should render no results found if no matching results", () => {
     const PlacesListComponent = shallow(
       <PlacesList results={[{ name: "No results found" }]} />
     );
