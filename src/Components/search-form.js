@@ -38,11 +38,11 @@ const SearchForm = () => {
       <label className="label">Pick-up Location</label>
       <div className="search-section">
         <input
+          type="text"
           placeholder="city, airport, station, region, district..."
           className="search"
           value={searchTerm}
           onChange={event => setSearchTerm(event.target.value)}
-          data-testid="input"
         />
         <PlacesList results={results} />
       </div>
