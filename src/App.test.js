@@ -4,7 +4,7 @@ import App from "./App";
 import AppHeader from "./Components/app-header";
 import SearchForm from "./Components/search-form";
 
-test("renders learn react link", () => {
+test("renders components as expected", () => {
   const component = shallow(<App />);
 
   expect(component.find(AppHeader).length).toBe(1);

@@ -23,7 +23,7 @@
 
 .search {
   height: 48px;
-  width: 94%;
+  width: 90%;
   font-size: 1rem;
   border-color: #c8ae5b;
   border: 1px solid #a4a4a4;
@@ -52,7 +52,6 @@
 }
 
 .form {
-  min-width: 50vh;
   max-width: 630px;
   z-index: 1;
   background-color: #f3ce56;
@@ -66,7 +65,8 @@ ul {
   justify-content: center;
   display: table;
   padding-inline-start: 0;
-  width: 100%;
+  width: 95%;
+  padding-left: 8px;
   text-align: left;
   margin: 0;
 }
@@ -76,7 +76,8 @@ ul {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
-    top: 18vh;
+    top: 85px;
+    width: 100%;
   }
 
   .car-hire {
@@ -93,9 +94,15 @@ ul {
     left: 50%;
     transform: translate(-50%, 0%);
     top: 16vh;
+    width: 70vmin;
   }
 
   .label {
     padding-left: 18px;
+  }
+
+  ul {
+    padding-left: 20px;
+    width: 93%;
   }
 }

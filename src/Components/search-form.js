@@ -1,16 +1,13 @@
 import React from "react";
 import axios from "axios";
 import useDebounce from "./use-debouncer";
+import PlacesList from "./places-list";
 import "./search-form.css";
 
 const SearchForm = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [results, setResults] = React.useState([]);
   const debouncedSearchTerm = useDebounce(searchTerm, 1000);
-
-  const handleChange = event => {
-    setSearchTerm(event.target.value);
-  };
 
   React.useEffect(() => {
     if (debouncedSearchTerm) {
@@ -44,16 +41,10 @@ const SearchForm = () => {
           placeholder="city, airport, station, region, district..."
           className="search"
           value={searchTerm}
-          onChange={handleChange}
+          onChange={event => setSearchTerm(event.target.value)}
           data-testid="input"
         />
-        <ul>
-          {results.map(item => (
-            <li className="search-item" key={item.placeKey}>
-              {item.name}
-            </li>
-          ))}
-        </ul>
+        <PlacesList results={results} />
       </div>
     </form>
   );

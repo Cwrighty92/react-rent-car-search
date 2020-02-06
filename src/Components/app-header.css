@@ -1,5 +1,4 @@
 .app-header {
-  height: 30vh;
   width: 100%;
   top: 0;
   position: absolute;
@@ -7,10 +6,10 @@
 }
 
 .rental-car-header {
-  height: 40px;
   background-color: #0a6fba;
   padding-top: 16px;
   padding-left: 8px;
+  padding-bottom: -10px;
 }
 
 .rental-image {
@@ -41,12 +40,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .rental-image {
-    height: 18px;
+  .rental-car-header {
+    height: 30px;
   }
 
-  .app-header {
-    height: 30vh;
+  .rental-image {
+    height: 18px;
   }
 
   .car-hire {
@@ -61,16 +60,19 @@
   .rental-image {
     height: 35px;
   }
-
+  .rental-car-header {
+    padding-bottom: 16px;
+  }
   .ideal-car {
     padding: 16px;
   }
 
   .app-header {
-    height: 40vh;
+    height: 65vh;
   }
 
   .hero {
     text-align: center;
+    padding: 2vh;
   }
 }
