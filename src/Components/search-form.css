@@ -71,9 +71,10 @@ ul {
   margin: 0;
 }
 
-.hover-search {
+.search-item:hover {
   background-color: #e7f4fe;
 }
+
 @media only screen and (max-width: 600px) {
   .form {
     position: absolute;

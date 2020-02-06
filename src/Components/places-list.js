@@ -10,20 +10,10 @@ const PlaceTypes = {
 };
 
 const PlacesList = ({ results }) => {
-  const [hoverItem, updateHoverItem] = React.useState("");
-
-  const getClass = itemIndex => {
-    if (itemIndex === hoverItem) return "search-item hover-search";
-    return "search-item";
-  };
   return (
     <ul>
       {results.map(item => (
-        <li
-          className={getClass(item.index)}
-          key={item.index + item.placeKey}
-          onMouseEnter={() => updateHoverItem(item.index)}
-        >
+        <li className="search-item" key={item.index + item.placeKey}>
           <div>{PlaceTypes[item.placeType]}</div>
           <div>
             {item.name} {item.country}
