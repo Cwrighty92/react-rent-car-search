@@ -11,7 +11,7 @@ const PlaceTypes = {
 
 const PlacesList = ({ results }) => {
   return (
-    <ul>
+    <ol>
       {results.map(item => (
         <li className="search-item" key={item.index + item.placeKey}>
           <div>{PlaceTypes[item.placeType]}</div>
@@ -20,7 +20,7 @@ const PlacesList = ({ results }) => {
           </div>
         </li>
       ))}
-    </ul>
+    </ol>
   );
 };
 

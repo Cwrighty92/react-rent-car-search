@@ -11,8 +11,7 @@ describe("Places list tests", () => {
   it("should render empty ul when no search results", () => {
     const PlacesListComponent = shallow(<PlacesList results={[]} />);
 
-    expect(PlacesListComponent.find("ul").children().length).toBe(0);
-    expect(PlacesListComponent.find("li").length).toBe(0);
+    expect(PlacesListComponent.find("ol").children().length).toBe(0);
   });
 
   it("should render no results found if no matching results", () => {
@@ -20,19 +19,16 @@ describe("Places list tests", () => {
       <PlacesList results={[{ name: "No results found" }]} />
     );
     const listItem = PlacesListComponent.find("li").at(0);
-    expect(
-      listItem
-        .find("div")
-        .at(1)
-        .text()
-    ).toBe("No results found ");
+
+    expect(listItem.text()).toBe("No results found ");
   });
 
   it("should render list items when search results passed", () => {
     const PlacesListComponent = shallow(<PlacesList results={testResults} />);
     const listItem1 = PlacesListComponent.find("li").at(0);
     const listItem2 = PlacesListComponent.find("li").at(1);
-    expect(PlacesListComponent.find("ul").children().length).toBe(2);
+
+    expect(PlacesListComponent.find("ol").children().length).toBe(2);
 
     expect(
       listItem1
