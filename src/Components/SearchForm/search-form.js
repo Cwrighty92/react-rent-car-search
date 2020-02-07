@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import useDebounce from "./use-debouncer";
-import PlacesList from "./places-list";
+import useDebounce from "../use-debouncer";
+import PlacesList from "../PlacesList/places-list";
 import "./search-form.css";
 
 const SearchForm = () => {
@@ -14,19 +14,16 @@ const SearchForm = () => {
       if (debouncedSearchTerm.length < 2) {
         return setResults([]);
       }
-      if (debouncedSearchTerm.length >= 2) {
-        try {
-          axios
-            .get(
-              `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=${6}&solrTerm=${debouncedSearchTerm}`
-            )
-            .then(function(response) {
-              setResults(response.data.results.docs);
-            });
-        } catch (error) {
-          console.log(error);
-        }
-      }
+      axios
+        .get(
+          `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=${6}&solrTerm=${debouncedSearchTerm}`
+        )
+        .then(function(response) {
+          setResults(response.data.results.docs);
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
     } else {
       setResults([]);
     }
@@ -35,14 +32,18 @@ const SearchForm = () => {
   return (
     <form className="form">
       <h2 className="ideal-car">Let’s find your ideal car</h2>
-      <label className="label">Pick-up Location</label>
+      <label className="label" htmlFor="place-search">
+        Pick-up Location
+      </label>
       <div className="search-section">
         <input
           type="text"
           placeholder="city, airport, station, region, district..."
           className="search"
+          id="place-search"
           value={searchTerm}
           onChange={event => setSearchTerm(event.target.value)}
+          data-testid="input"
         />
         <PlacesList results={results} />
       </div>

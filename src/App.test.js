@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
 import App from "./App";
-import AppHeader from "./Components/app-header";
-import SearchForm from "./Components/search-form";
+import AppHeader from "./Components/AppHeader/app-header";
+import SearchForm from "./Components/SearchForm/search-form";
 
 test("renders components as expected", () => {
   const component = shallow(<App />);

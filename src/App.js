@@ -1,6 +1,6 @@
 import React from "react";
-import AppHeader from "./Components/app-header";
-import SearchForm from "./Components/search-form";
+import AppHeader from "./Components/AppHeader/app-header";
+import SearchForm from "./Components/SearchForm/search-form";
 
 function App() {
   return (

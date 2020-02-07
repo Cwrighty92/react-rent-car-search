@@ -4,12 +4,7 @@ import PlacesList from "./places-list";
 
 describe("Places list tests", () => {
   const testResults = [
-    {
-      name: "Picadilly Station",
-      country: "Uk",
-      placeKey: 12312,
-      placeType: "T"
-    },
+    { name: "Picadilly Sta", country: "Uk", placeKey: 12312, placeType: "T" },
     { name: "Alton Towers", country: "Uk", placeKey: 12314, placeType: "G" }
   ];
 
@@ -31,13 +26,6 @@ describe("Places list tests", () => {
         .at(1)
         .text()
     ).toBe("No results found ");
-    expect(listItem.find("li").length).toBe(1);
-    expect(
-      listItem
-        .find("div")
-        .at(0)
-        .text()
-    ).toBe("");
   });
 
   it("should render list items when search results passed", () => {
@@ -51,7 +39,7 @@ describe("Places list tests", () => {
         .find("div")
         .at(1)
         .text()
-    ).toBe("Picadilly Station Uk");
+    ).toBe("Picadilly Sta Uk");
 
     expect(
       listItem1
