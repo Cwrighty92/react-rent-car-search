@@ -1,4 +1,5 @@
 import React from "react";
+import "./places-list.css";
 
 const PlaceTypes = {
   C: "City",

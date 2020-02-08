@@ -8,7 +8,7 @@ const AppHeader = () => {
         className="rental-image"
         src="https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/header/logo_white.svg"
         alt="Car Hire - Rentalcars.com"
-      ></img>
+      />
       <div className="line-seperator" />
       <h1 className="car-hire-title">Car Hire - Search, Compare & Save</h1>
     </header>

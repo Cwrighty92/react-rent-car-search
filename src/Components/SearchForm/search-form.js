@@ -14,16 +14,17 @@ const SearchForm = () => {
       if (debouncedSearchTerm.length < 2) {
         return setResults([]);
       }
-      axios
-        .get(
-          `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=${6}&solrTerm=${debouncedSearchTerm}`
-        )
-        .then(function(response) {
+      async function fetchSearchResults() {
+        try {
+          const response = await axios.get(
+            `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=${6}&solrTerm=${debouncedSearchTerm}`
+          );
           setResults(response.data.results.docs);
-        })
-        .catch(function(err) {
-          console.log(err);
-        });
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      fetchSearchResults();
     } else {
       setResults([]);
     }
@@ -37,10 +38,10 @@ const SearchForm = () => {
       </label>
       <div className="search-section">
         <input
+          id="place-search"
           type="text"
           placeholder="city, airport, station, region, district..."
           className="search"
-          id="place-search"
           value={searchTerm}
           onChange={event => setSearchTerm(event.target.value)}
           data-testid="input"

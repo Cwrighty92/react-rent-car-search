@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import axios from "axios";
 import SearchForm from "./search-form";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { render, fireEvent, cleanup, act, wait } from "@testing-library/react";
 import useDebounce from "../use-debouncer";
 
 jest.mock("../use-debouncer");
@@ -37,9 +37,10 @@ describe("search form tests", () => {
     const axiosGetSpy = jest.spyOn(axios, "get").mockResolvedValueOnce({
       data: { results: { docs: [{ name: "test" }] } }
     });
-    useDebounce.mockReturnValueOnce("Manchester");
-    const { getByTestId } = render(<SearchForm />);
 
+    useDebounce.mockReturnValueOnce("Manchester");
+
+    const { getByTestId } = render(<SearchForm />);
     fireEvent.change(getByTestId("input"), { target: { value: "ma" } });
 
     expect(axiosGetSpy).toBeCalledWith(
