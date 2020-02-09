@@ -10,7 +10,7 @@ const AppHeader = () => {
         alt="Car Hire - Rentalcars.com"
       />
       <div className="line-seperator" />
-      <h1 className="car-hire-title">Car Hire - Search, Compare & Save</h1>
+      <h1 className="car-hire-title">{"Car Hire - Search, Compare & Save"}</h1>
     </header>
   );
 };

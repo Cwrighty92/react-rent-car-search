@@ -14,10 +14,10 @@ const PlacesList = ({ results }) => {
   return (
     <ul className="places-list">
       {results.map(item => (
-        <li className="search-item" key={item.index + item.placeKey}>
-          {item.placeType && <div>{PlaceTypes[item.placeType]}</div>}
+        <li className="search-item" key={item.index}>
+          <div>{PlaceTypes[item.placeType]}</div>
           <div>
-            {item.name} {item.country && item.country}
+            {item.name} {item.country}
           </div>
         </li>
       ))}

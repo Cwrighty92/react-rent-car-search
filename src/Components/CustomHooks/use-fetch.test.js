@@ -1,6 +1,6 @@
 import axios from "axios";
-import UseFetch from "./use-fetch";
 import { renderHook } from "@testing-library/react-hooks";
+import UseFetch from "./use-fetch";
 
 describe("use fetch custom hook tests", () => {
   beforeEach(() => {

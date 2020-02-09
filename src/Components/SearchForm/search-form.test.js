@@ -4,7 +4,6 @@ import SearchForm from "./search-form";
 
 describe("search form tests", () => {
   const SearchFormComponent = shallow(<SearchForm />);
-
   it("Should render component correctly", () => {
     expect(SearchFormComponent.find("form").length).toBe(1);
     expect(SearchFormComponent.find("h2").text()).toBe(

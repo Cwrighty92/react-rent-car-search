@@ -4,8 +4,8 @@ import PlacesList from "./places-list";
 
 describe("Places list tests", () => {
   const testResults = [
-    { name: "Picadilly Sta", country: "Uk", placeKey: 12312, placeType: "T" },
-    { name: "Alton Towers", country: "Uk", placeKey: 12314, placeType: "G" }
+    { name: "Picadilly Sta", country: "Uk", index: 0, placeType: "T" },
+    { name: "Alton Towers", country: "Uk", index: 1, placeType: "G" }
   ];
 
   it("should render empty ul when no search results", () => {
@@ -16,7 +16,7 @@ describe("Places list tests", () => {
 
   it("should render no results found if no matching results", () => {
     const PlacesListComponent = shallow(
-      <PlacesList results={[{ name: "No results found" }]} />
+      <PlacesList results={[{ name: "No results found", index: 0 }]} />
     );
     const listItem = PlacesListComponent.find("li").at(0);
 
