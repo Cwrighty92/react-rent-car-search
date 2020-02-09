@@ -12,16 +12,16 @@ const PlaceTypes = {
 
 const PlacesList = ({ results }) => {
   return (
-    <ol>
+    <ul className="places-list">
       {results.map(item => (
         <li className="search-item" key={item.index + item.placeKey}>
-          <div>{PlaceTypes[item.placeType]}</div>
+          {item.placeType && <div>{PlaceTypes[item.placeType]}</div>}
           <div>
-            {item.name} {item.country}
+            {item.name} {item.country && item.country}
           </div>
         </li>
       ))}
-    </ol>
+    </ul>
   );
 };
 
