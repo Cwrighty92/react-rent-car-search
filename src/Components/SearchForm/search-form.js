@@ -7,6 +7,7 @@ import "./search-form.css";
 const SearchForm = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [results, setResults] = React.useState([]);
+  const [selectedValue, setValue] = React.useState("");
   const debouncedSearchTerm = useDebounce(searchTerm, 1000);
   const resultsData = useFetch(debouncedSearchTerm);
 
@@ -33,7 +34,8 @@ const SearchForm = () => {
           onChange={event => setSearchTerm(event.target.value)}
           data-testid="input"
         />
-        <PlacesList results={results} />
+        <PlacesList results={results} setValue={setValue} />
+        <h2 id="selected-value">{selectedValue}</h2>
       </div>
     </form>
   );

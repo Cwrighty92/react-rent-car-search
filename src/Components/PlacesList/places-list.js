@@ -10,11 +10,15 @@ const PlaceTypes = {
   G: "Place"
 };
 
-const PlacesList = ({ results }) => {
+const PlacesList = ({ results, setValue }) => {
   return (
     <ul className="places-list">
       {results.map(item => (
-        <li className="search-item" key={item.index}>
+        <li
+          className="search-item"
+          key={item.index}
+          onClick={() => setValue(item.name)}
+        >
           <div>{PlaceTypes[item.placeType]}</div>
           <div>
             {item.name} {item.country}

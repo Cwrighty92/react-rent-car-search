@@ -58,4 +58,17 @@ describe("Places list tests", () => {
         .text()
     ).toBe("Place");
   });
+
+  it("should render no results found if no matching results", () => {
+    const setValue = jest.fn();
+    const PlacesListComponent = shallow(
+      <PlacesList results={testResults} setValue={setValue} />
+    );
+
+    PlacesListComponent.find(".search-item")
+      .at(0)
+      .simulate("click");
+
+    expect(setValue).toHaveBeenCalledWith("Picadilly Sta");
+  });
 });
